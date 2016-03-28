@@ -16,14 +16,20 @@ public struct Pin {
   let mode: PinMode
 }
 
-public struct SwiftFirmata {
-  private let firmataC: UnsafeMutablePointer<t_firmata>
+public class SwiftFirmata {
+  private var firmataC: UnsafeMutablePointer<t_firmata>
 
-  public init(connection: String, baud: Int) {
-    self.firmataC = firmata_new(strdup(connection))
+  public init(connect: String, baud: Int) {
+    self.firmataC = firmata_new(strdup(connect), Int32(baud))
   }
 
-  public func configurePinMode(pin: Pin) {
+  deinit {
+    if self.firmataC != nil {
+      free(self.firmataC)
+    }
+  }
+
+  public func configure(pin: Pin) {
     firmata_pinMode(firmataC, Int32(pin.number), Int32(pin.mode.rawValue))
   }
 

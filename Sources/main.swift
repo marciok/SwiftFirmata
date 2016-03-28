@@ -1,11 +1,11 @@
 import Foundation
 
-let firmata = SwiftFirmata(connection: "/dev/cu.usbmodem1421", baud: 5600)
+let firmata = SwiftFirmata(connect: "/dev/cu.usbmodem1421", baud: 57600)
 let pin = Pin(number: 13, mode: .Output)
-firmata.configurePinMode(pin)
+firmata.configure(pin)
 
 while (true) {
-  // firmata.digitalWrite(pin, level: .High)
+  firmata.digitalWrite(pin, level: .High)
   sleep(2)
   firmata.digitalWrite(pin, level: .Low)
   sleep(2)
