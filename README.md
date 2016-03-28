@@ -5,6 +5,14 @@ The idea is to provide a framework to control Arduino using Swift. By implementi
 
 Heavily inspired on: https://github.com/younata/firmata
 
+## Building:
+```shell
+cd Packages/CFirmata-0.3.0/
+sudo make install
+cd ../../
+swift build 
+```
+
 ## Example:
 
 ```swift
