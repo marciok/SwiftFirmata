@@ -1,6 +1,8 @@
 # SwiftFirmata
-A Swift firmata framework.  
-Heavily inspired on https://github.com/younata/firmata
+A Swift wrapper on CFirmata
+The idea is to provide a framewrok to control your Arduino board using the (Firmata protocol)[firmata.org/wiki/V2.3ProtocolDetails]
+
+Heavily inspired by: https://github.com/younata/firmata
 
 ## Example:
 
