@@ -14,7 +14,7 @@ swift build
 ```
 
 ## Example:
-
+### [blink.swift](https://github.com/marciok/swiftfirmata/blob/master/examples/blink.swift)
 ```swift
 import Foundation
 
