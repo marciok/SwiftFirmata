@@ -1,6 +1,6 @@
 import Foundation
 
-let firmata = SwiftFirmata(connect: "/dev/cu.usbmodem1421", baud: 57600)
+let firmata = try! SwiftFirmata(connect: "/dev/cu.usbmodem1421", baud: 57600)
 let pin = Pin(number: 13, mode: .Output)
 firmata.configure(pin)
 

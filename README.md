@@ -21,7 +21,7 @@ swift build
 import Foundation
 
 // Blink led hooked on pin 13
-let firmata = SwiftFirmata(connect: "/dev/cu.usbmodem1421", baud: 57600)
+let firmata = try! SwiftFirmata(connect: "/dev/cu.usbmodem1421", baud: 57600)
 let pin = Pin(number: 13, mode: .Output)
 firmata.configure(pin)
 

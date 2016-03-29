@@ -16,11 +16,19 @@ public struct Pin {
   let mode: PinMode
 }
 
+public enum SwiftFirmataError: ErrorType {
+    case couldntConnect
+}
+
 public class SwiftFirmata {
   private var firmataC: UnsafeMutablePointer<t_firmata>
 
-  public init(connect: String, baud: Int) {
+  public init(connect: String, baud: Int) throws {
     self.firmataC = firmata_new(strdup(connect), Int32(baud))
+
+    if self.firmataC == nil {
+      throw SwiftFirmataError.couldntConnect
+    }
   }
 
   deinit {
