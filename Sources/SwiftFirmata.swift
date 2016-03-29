@@ -36,6 +36,10 @@ public class SwiftFirmata {
   public func digitalWrite(pin: Pin, level: DigitalLevel) {
     firmata_digitalWrite(firmataC, Int32(pin.number), Int32(level.rawValue))
   }
+
+  public func analogWrite(pin: Pin, width: Int) {
+    firmata_analogWrite(firmataC, Int32(pin.number), Int32(width))
+  }
 }
 
 
