@@ -20,7 +20,7 @@ public enum SwiftFirmataError: ErrorType {
     case couldntConnect
 }
 
-public class SwiftFirmata {
+public final class SwiftFirmata {
   private var firmataC: UnsafeMutablePointer<t_firmata>
 
   public init(connect: String, baud: Int) throws {
